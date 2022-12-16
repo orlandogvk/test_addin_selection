@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, default: mongoose } = require('mongoose');
 
 const userSchema = Schema({
     name: {
@@ -7,7 +7,7 @@ const userSchema = Schema({
     },
     email: {
         type: String,
-        lowercase:true,
+        lowercase: true,
         required: true
     },
     password: {
@@ -16,8 +16,12 @@ const userSchema = Schema({
     },
     avatar: {
         type: String,
-        required: true
+        required: false
     },
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }],
     status: {
         type: Boolean,
         default: true
@@ -26,7 +30,7 @@ const userSchema = Schema({
         type: String,
         default: null
     },
-    resetToken:{
+    resetToken: {
         type: String,
         default: null
     }

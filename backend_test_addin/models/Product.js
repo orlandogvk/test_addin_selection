@@ -11,12 +11,16 @@ const productSchema = new Schema({
     },
     image :{
         type : String,
-        required : true
+        required : false
     },
     price : {
         type :  Number,
         required : true
     },
+    user : {
+        type :  Schema.Types.ObjectId,
+        ref: 'User'
+    }
 },
 {
     timestamps: true,
