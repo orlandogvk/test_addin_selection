@@ -1,8 +1,9 @@
 const { app } = require("./app");
-const { PORT } = process.env;
 const { dbConnect } = require("./database/db");
 
-app.listen(PORT, () => {
-    console.log("Server running in port ", PORT)
+app.set('port', process.env.PORT || 5000);
+
+app.listen(app.get('port'), () => {
+    console.log(`Server running on port ${app.get('port')}`)
     dbConnect();
 });
