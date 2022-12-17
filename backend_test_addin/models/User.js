@@ -14,14 +14,7 @@ const userSchema = Schema({
         type: String,
         required: true
     },
-    avatar: {
-        type: String,
-        required: false
-    },
-    products: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
-    }],
+    products: [],
     status: {
         type: Boolean,
         default: true
