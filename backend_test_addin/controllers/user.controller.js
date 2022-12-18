@@ -71,7 +71,7 @@ const login = async (req, res) => {
         user.save();
         return res.status(200).json({ msg: "User logged in", id: user._id, name: user.name, token: access_token, refresh_token })
     } catch (error) {
-        return res.status(400).json("Llegue")
+        return res.status(400).json(error.message)
     }
 }
 

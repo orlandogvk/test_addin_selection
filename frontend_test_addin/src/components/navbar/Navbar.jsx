@@ -12,8 +12,8 @@ export const Navbarc = () => {
                 <Container>
                     <Link to='/'><Navbar.Brand>Logo</Navbar.Brand></Link>
                     <Nav className="me-auto">
-                        <Nav.Link><Link to='/login'>Login</Link></Nav.Link>
-                        <Nav.Link><Link to='/register'>Register</Link></Nav.Link>
+                        <Link to='/login'>Login</Link>
+                        <Link to='/register'>Register</Link>
                     </Nav>
                     <div className="user">
                         <span className="username">Orlando</span>

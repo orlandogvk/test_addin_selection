@@ -5,10 +5,19 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const signIn = (user) => {
     return async (dispatch) => {
-        const { email, password } = user
-        const { data } = await api.post('/users/login/', { email, password })
-        dispatch(registeredUser(data))
+        try {
+            const { email, password } = user
+            const { data } = await api.post('/users/login/', { email, password })
+            console.log('DATA ', data)
+            dispatch(registeredUser(data))
+        } catch (error) {
+            console.log(error)
+        }
     }
+}
+
+export const getProductsByUser = () => {
+    alert('Hello World')
 }
 
 export const signUp = createAsyncThunk(
